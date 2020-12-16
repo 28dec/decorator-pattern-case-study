@@ -14,4 +14,6 @@ public class LemonTea extends Item{
         this.name = "Tra chanh";
         this.price = 12000;
     }
+
+	private int id;
 }

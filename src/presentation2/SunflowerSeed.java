@@ -14,4 +14,6 @@ public class SunflowerSeed extends Item {
         this.name = "Hat huong duong";
         this.price = 9000;
     }
+
+	private int id;
 }

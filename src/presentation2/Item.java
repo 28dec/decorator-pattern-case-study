@@ -8,6 +8,7 @@ public abstract class Item {
     protected String code;
     protected String name;
     protected int price;
+	private int id;
 
     public Item(String code, String name, int price) {
         this.name = name;

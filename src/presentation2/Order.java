@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class Order {
     private List<Item> itemList;
+	private int id;
     
     public Order(){
         this.itemList = new ArrayList<>();
@@ -18,5 +19,9 @@ public class Order {
             result += i.getName() + " - " + i.getPrice() + "\n";
         }
         return result;
+    }
+
+    public void printBill(){
+        System.out.println(getOrderDetails());
     }
 }
