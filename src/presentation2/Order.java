@@ -12,16 +12,17 @@ public class Order {
     
     public void add(Item i){ this.itemList.add(i); }
     public void remove(Item i){ this.itemList.remove(i); }
-    
-    public String getOrderDetails(){
-        String result = "";
-        for(Item i : itemList){
-            result += i.getName() + " - " + i.getPrice() + "\n";
-        }
-        return result;
-    }
 
-    public void printBill(){
-        System.out.println(getOrderDetails());
+    public void printBill(){ //skip SRP
+        for(Item i : itemList){
+            String toppings = "";
+            int totalPrice = i.getPrice();
+            List<Topping> toppingList = i.getToppingList();
+            for(Topping t : toppingList){
+                toppings += " " + t.getName();
+                totalPrice += t.getPrice();
+            }
+            System.out.println(i.getName() + toppings + "-" + totalPrice);
+        }
     }
 }

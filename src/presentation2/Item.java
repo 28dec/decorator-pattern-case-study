@@ -1,14 +1,17 @@
 package presentation2;
 
+import java.util.*;
+
 /**
  *
  * @author longnh
  */
 public abstract class Item {
+	protected int id;
     protected String code;
     protected String name;
     protected int price;
-	private int id;
+	protected List<Topping> toppingList;
 
     public Item(String code, String name, int price) {
         this.name = name;
@@ -20,6 +23,7 @@ public abstract class Item {
         this.code = "UNDEFINED";
         this.name = "UNDEFINED";
         this.price = -1;
+        this.toppingList = new ArrayList<>();
     }
     
     public String getName() {
@@ -45,5 +49,16 @@ public abstract class Item {
     public void setCode(String code) {
         this.code = code;
     }
-    
+
+    public List<Topping> getToppingList(){
+        return this.toppingList;
+    }
+
+    public void addTopping(Topping topping){
+        this.toppingList.add(topping);
+    }
+
+    public void removeTopping(Topping topping){
+        this.toppingList.remove(topping);
+    }
 }

@@ -11,7 +11,7 @@ package presentation2;
  */
 public class LemonTea extends Item{
     public LemonTea(){
-        this.name = "Tra chanh";
+        this.name = "Trà chanh";
         this.price = 12000;
     }
 

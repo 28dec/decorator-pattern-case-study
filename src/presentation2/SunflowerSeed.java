@@ -11,7 +11,7 @@ package presentation2;
  */
 public class SunflowerSeed extends Item {
     public SunflowerSeed(){
-        this.name = "Hat huong duong";
+        this.name = "Hướng dương";
         this.price = 9000;
     }
 
