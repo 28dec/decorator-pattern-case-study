@@ -25,17 +25,29 @@ public abstract class Item {
         this.price = -1;
         this.toppingList = new ArrayList<>();
     }
-    
+
+    public void addTopping(Topping topping){
+        this.toppingList.add(topping);
+    }
+
+    public void removeTopping(Topping topping){
+        this.toppingList.remove(topping);
+    }
+
     public String getName() {
-        return name;
+        String nameWithToppings = this.name;
+        for(Topping t : toppingList) nameWithToppings += " " + t.getName();
+        return nameWithToppings;
+    }
+
+    public int getPrice() {
+        int totalPrice = this.price;
+        for(Topping t : toppingList) totalPrice += t.getPrice();
+        return totalPrice;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getPrice() {
-        return price;
     }
 
     public void setPrice(int price) {
@@ -52,13 +64,5 @@ public abstract class Item {
 
     public List<Topping> getToppingList(){
         return this.toppingList;
-    }
-
-    public void addTopping(Topping topping){
-        this.toppingList.add(topping);
-    }
-
-    public void removeTopping(Topping topping){
-        this.toppingList.remove(topping);
     }
 }
